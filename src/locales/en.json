@@ -1,0 +1,26 @@
+{
+  "app": {
+    "tagline": "Online Laptop Store"
+  },
+  "nav": {
+    "menu": "Main Menu",
+    "catalog": "Catalog",
+    "orders": "Orders",
+    "cart": "Cart",
+    "login": "Sign In",
+    "register": "Register"
+  },
+  "catalog": {
+    "title": "Laptops",
+    "subtitle": "Choose processor, RAM, and screen — filters come from server.",
+    "filters": "Filters",
+    "searchPlaceholder": "Search by model or brand...",
+    "sort": "Sort by",
+    "empty": "No products found"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "checkout": "Proceed to Checkout"
+  }
+}

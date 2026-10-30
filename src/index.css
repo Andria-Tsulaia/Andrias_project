@@ -1,0 +1,182 @@
+@import "@fontsource/noto-sans-georgian/400.css";
+@import "@fontsource/noto-sans-georgian/600.css";
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Cyber storefront design tokens
+ */
+
+@layer base {
+  :root {
+    --background: 220 30% 99%;
+    --foreground: 224 34% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 34% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 34% 11%;
+
+    --primary: 226 71% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 226 100% 97%;
+
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 224 30% 18%;
+
+    --muted: 220 18% 96%;
+    --muted-foreground: 220 12% 43%;
+
+    --accent: 226 100% 97%;
+    --accent-foreground: 226 71% 38%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-soft: 0 86% 97%;
+
+    --success: 152 60% 32%;
+    --success-foreground: 0 0% 100%;
+    --success-soft: 152 62% 95%;
+
+    --warning: 32 94% 40%;
+    --warning-foreground: 0 0% 100%;
+    --warning-soft: 40 100% 96%;
+
+    --discount: 356 74% 47%;
+    --discount-foreground: 0 0% 100%;
+
+    --star: 40 96% 47%;
+
+    --border: 220 16% 89%;
+    --input: 220 16% 87%;
+    --ring: 226 71% 45%;
+
+    --radius: 0.75rem;
+
+    --shadow-card: 0 1px 2px 0 hsl(224 34% 11% / 0.04), 0 8px 24px -12px hsl(224 34% 11% / 0.12);
+    --shadow-elevated: 0 2px 4px 0 hsl(224 34% 11% / 0.05), 0 24px 48px -24px hsl(224 34% 11% / 0.22);
+
+    --sidebar-background: 220 30% 99%;
+    --sidebar-foreground: 224 30% 18%;
+    --sidebar-primary: 226 71% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 226 100% 97%;
+    --sidebar-accent-foreground: 226 71% 38%;
+    --sidebar-border: 220 16% 89%;
+    --sidebar-ring: 226 71% 45%;
+  }
+
+  .dark {
+    --background: 224 30% 8%;
+    --foreground: 210 25% 95%;
+
+    --card: 224 26% 11%;
+    --card-foreground: 210 25% 95%;
+
+    --popover: 224 26% 11%;
+    --popover-foreground: 210 25% 95%;
+
+    --primary: 226 75% 65%;
+    --primary-foreground: 224 30% 10%;
+    --primary-soft: 226 35% 20%;
+
+    --secondary: 224 20% 17%;
+    --secondary-foreground: 210 25% 92%;
+
+    --muted: 224 20% 17%;
+    --muted-foreground: 220 12% 67%;
+
+    --accent: 226 30% 20%;
+    --accent-foreground: 226 85% 80%;
+
+    --destructive: 0 62% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-soft: 0 35% 19%;
+
+    --success: 152 48% 42%;
+    --success-foreground: 0 0% 100%;
+    --success-soft: 152 30% 18%;
+
+    --warning: 32 85% 52%;
+    --warning-foreground: 224 30% 10%;
+    --warning-soft: 32 35% 19%;
+
+    --discount: 356 70% 60%;
+    --discount-foreground: 0 0% 100%;
+
+    --star: 40 96% 55%;
+
+    --border: 224 18% 24%;
+    --input: 224 18% 26%;
+    --ring: 226 75% 65%;
+
+    --shadow-card: 0 1px 2px 0 hsl(0 0% 0% / 0.2), 0 8px 24px -12px hsl(0 0% 0% / 0.35);
+    --shadow-elevated: 0 2px 4px 0 hsl(0 0% 0% / 0.25), 0 24px 48px -24px hsl(0 0% 0% / 0.5);
+
+    --sidebar-background: 224 30% 8%;
+    --sidebar-foreground: 210 25% 92%;
+    --sidebar-primary: 226 75% 65%;
+    --sidebar-primary-foreground: 224 30% 10%;
+    --sidebar-accent: 224 20% 17%;
+    --sidebar-accent-foreground: 210 25% 92%;
+    --sidebar-border: 224 18% 24%;
+    --sidebar-ring: 226 75% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Noto Sans Georgian', system-ui, sans-serif;
+  }
+
+  /* Keep the fallback font metrics close to the loaded Georgian face to reduce CLS. */
+  @supports (font-size-adjust: from-font) {
+    body {
+      font-size-adjust: from-font;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-[1200px] px-4 md:px-6;
+  }
+
+  .surface-card {
+    @apply rounded-lg border border-border bg-card text-card-foreground;
+    box-shadow: var(--shadow-card);
+  }
+
+  .surface-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .text-price {
+    @apply font-semibold tabular-nums;
+  }
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}

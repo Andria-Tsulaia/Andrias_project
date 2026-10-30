@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+  <script>
+    (function() {
+      try {
+        var theme = localStorage.getItem('app_theme') || 'system';
+        var isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ოპტიმიზაცია: API-სთან და სურათებთან კავშირის წინასწარი გახსნა -->
+  <link rel="preconnect" href="https://shop-api-kbe6.onrender.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
+
+  <title>Cyber — ლეპტოპების ონლაინ მაღაზია</title>
+  <meta name="description"
+    content="Cyber — ლეპტოპების ონლაინ მაღაზია. ფილტრაცია, ძებნა, კალათა და უსაფრთხო შეკვეთა." />
+  <meta name="author" content="ანდრია წულაია" />
+
+  <meta property="og:title" content="Cyber — ლეპტოპების ონლაინ მაღაზია" />
+  <meta property="og:description"
+    content="აირჩიე ლეპტოპი პროცესორით, ოპერატიულითა და ეკრანით — ფილტრები სერვერიდან." />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

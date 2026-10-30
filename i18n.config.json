@@ -1,0 +1,19 @@
+
+{
+  "version": 1,
+  "fallbackLng": "ka",
+  "languages": [
+    {
+      "code": "ka",
+      "label": "ქართული",
+      "detect": ["ka", "ka-GE"],
+      "dir": "ltr"
+    },
+    {
+      "code": "en",
+      "label": "English",
+      "detect": ["en", "en-US", "en-GB"],
+      "dir": "ltr"
+    }
+  ]
+}
