@@ -14,9 +14,7 @@ const queryClient = new QueryClient({
   },
 });
 
-const router = createBrowserRouter(routers, {
-  basename: "/Andrias-project",
-});
+const router = createBrowserRouter(routers);
 
 const App = () => {
   return (
