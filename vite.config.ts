@@ -1,4 +1,3 @@
-
 import { defineConfig, PluginOption } from "vite";
 import react from "@vitejs/plugin-react";
 import {
@@ -35,7 +34,7 @@ export default defineConfig(({ mode }) => {
         "@": path.resolve(__dirname, "./src"),
       },
     },
-    base: "/Andrias-project/",
+    base: "./",
     build: {
       outDir: "dist",
       target: "es2022",
